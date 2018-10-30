@@ -1,20 +1,17 @@
 import java.util.Scanner;
 
 public class Gugudan {
-	// 사용자로부터 입력받은 구구단 단수의 결과값을 배열에 입력하는 메서드
-	public static int[] calculate(int times) {
-		int[] result = new int[9]; // 0~8의 인덱스를 갖는 배열 생성
+	
+	//예를 들어 사용자가 “8,7”과 같은 문자열을 입력하면 팔칠단을 구현한다. 팔칠단은 2 * 1 … 2 * 7, 3 * 1 … 3 * 7, … , 8 * 1 … 8 * 7 까지 구현
+	public static void calculate(int first, int second) {  
+		//[] result = new int[times];  // 사용자가 입력한 숫자크기만큼 크기의 배열생성
 		
-		for (int i = 0; i < result.length; i++) {
-			result[i] = times * (i+1);
+		for (int i = 2; i <= first; i++) {
+			for (int j = 1; j <= second; j++) {
+				System.out.printf("%d x %d = %2d\n", i, j, i*j);
+			}
+			System.out.println();
 		}
-		return result;
 	}
 	
-	// 사용자로부터 입력받은 구구단 단수의 데이터를 저장한 배열을 출력하는 함수
-	public static void print(int[] result) {
-		for (int i = 0; i < result.length; i++) {
-			System.out.println(result[i]); 
-		}
-	}
 }
